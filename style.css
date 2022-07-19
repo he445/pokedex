@@ -1,0 +1,33 @@
+h1 {
+  color: Green;
+}
+
+body {
+  align-content: center;
+  align-items: center;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#father {
+  width: 800px;
+  height: 80px;
+  align-content: center;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 10rem;
+}
+.line {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 5px;
+  text-decoration: none;
+  font-size: large;
+}
+img {
+  max-width: 10%;
+  max-height: 5%;
+}
