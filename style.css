@@ -1,7 +1,15 @@
 *{ margin: 0;
-  padding: 0;}
-body{background-image: linear-gradient(to right, #02BAB2, #058983);
-  background-image: repeating-linear-gradient(#678cd8 50%, #6a8acf 40%, #719be5 20%)}
+  padding: 0;
+  box-sizing: border-box;}
+
+  .bg{
+  background-image: url(Pokedex_web.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: fixed;
+ 
+ 
+}
 
 #header{
   max-width: 97%;
@@ -21,31 +29,58 @@ body{background-image: linear-gradient(to right, #02BAB2, #058983);
   margin-right: 2rem;
   margin-top: 0.5rem;
 }
+#grid{
+  display: grid;
+  grid-template-columns: 1fr 200px;
+  gap: 3rem;
+  padding: 3rem;
+}
 
 #father {
   display: inline;
-  width: 300px;
-  height: 600px;
- margin-top: 2rem;
- margin-left: 1000px;
+  width: 250px;
+  height:392px;
+  margin-top: 9rem;
+ 
  margin-bottom: 2rem;
  overflow-y: scroll;
-  float: left
+  float: left;
+  position: relative;}
+ 
+  #father::-webkit-scrollbar {
+    width: 10px
+} 
+#father::-webkit-scrollbar-track {
+  background:  #6188ff;       
 }
+#father::-webkit-scrollbar-thumb{
+  background-color:  #2174f1;
+  border-radius: 20px;
+  border: 3px solid #6188ff
+}
+
 .line {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
-  gap: 0.2rem;
+  justify-self: start;
+  
   text-decoration: none;
-  font-size: large;
+  font-size: 20px;
   background-color: #fdeab1;
   border-radius: 2rem}
   .line h2{
     padding-left: 5px;
     text-transform: capitalize;
   }
-img {
-  max-width: 10%;
-  max-height: 5%;
+.line img {
+  max-width: 15%;
+  max-height: 9%;
 }
+
+.card {
+  display: flex;
+  background-color: #3C3E44;
+  height: 230px;
+  width: 560px;
+  border-radius: .5rem;
+  margin: 4px 0;}

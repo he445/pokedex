@@ -11,9 +11,9 @@ const resp = await fetch(
     idArrey.push(pokemon.id);
     idnum= function(){for(let i=0;i<=idArrey.length;i++){return idArrey[i]}}
      
-   const liPkemon = document.querySelector('#father').insertAdjacentHTML('beforeend', ` <li class="line"> <h2>${pokemon.name}</h2>
+   const liPkemon = document.querySelector('#father').insertAdjacentHTML('beforeend', ` <li class="line" style="margin-bottom: 0.2rem"> <h2>${pokemon.name}</h2>
    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/${idnum()}.png"  alt=""> 
-      </li> <br/>` )
+      </li> ` )
     
   
   });
