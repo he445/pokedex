@@ -44,7 +44,7 @@ body,
   justify-content: center;
 }
 
-#father {
+.father {
   display: inline;
   align-items: left;
   justify-content: left;
@@ -56,13 +56,13 @@ body,
 float: left;
 }
  
-  #father::-webkit-scrollbar {
+  .father::-webkit-scrollbar {
     width: 10px
 } 
-#father::-webkit-scrollbar-track {
+.father::-webkit-scrollbar-track {
   background:  #6188ff;       
 }
-#father::-webkit-scrollbar-thumb{
+.father::-webkit-scrollbar-thumb{
   background-color:  #2174f1;
   border-radius: 20px;
   border: 3px solid #6188ff
@@ -86,7 +86,7 @@ float: left;
   max-height: 9%;
 }
 
-.card {
+#card {
   display: flex;
   background-color: #3C3E44;
  align-items: center;
@@ -95,4 +95,8 @@ float: left;
   max-width: 70%;
   max-height: 50%;
   margin:  0 auto;
-margin-top: 9rem;}
+margin-top: 9rem;
+}
+.img {max-width: 40%;
+
+margin-right: 40%;}
