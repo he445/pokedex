@@ -1,6 +1,13 @@
   // const fetchPokemon = () => {
     const card= document.querySelector("#card")
     const liPkemons = document.querySelectorAll('.father')
+    const img = document.querySelector(".img")
+    const pName =  document.querySelector(".name")
+    const pType =  document.querySelector(".type")
+    const pNum = document.querySelector(".number")
+    const description = document.querySelector(".description")
+
+
   async function getAllPokemons() {
 const resp = await fetch(
    "https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0"
@@ -9,56 +16,49 @@ const resp = await fetch(
   data.results.forEach(async function (item) {
     const respPoke = await fetch(item.url);
     const pokemon = await respPoke.json();
-    // console.log(pokemon)
+  //  console.log(pokemon)
     let idArrey = [];
     idArrey.push(pokemon.id);
     idnum= function(){for(let i=0;i<=idArrey.length;i++){return idArrey[i]}}
      
-   document.querySelector('.father').insertAdjacentHTML('beforeend', ` <li class="line" style="margin-bottom: 0.2rem"><h2>${pokemon.name}</h2>
-   <span class="character-id">${pokemon.id}</span>
+   document.querySelector('.father').insertAdjacentHTML('beforeend', 
+   `
+   <li class="line" style="margin-bottom: 0.2rem">
+   <h2>${pokemon.name}</h2>
+   <h2 class="character-id">${pokemon.id}</h2>
    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/${idnum()}.png"  alt=""> 
-      </li> ` );
-      })
-      liPkemons.forEach((father) => {
+   </li>
+      ` );
+    });
+      liPkemons.forEach((line) => {
  
-        father.addEventListener("click", async function (event){
-           const cardElement = event.path.filter((item) => item.className == "father");
-          console.log(cardElement);
+        line.addEventListener("click", async function (event){
+           const cardElement = event.path.filter((item) => item.className == "line");
+          // console.log(cardElement);
       
-         const idCard= cardElement[1].children[1].innerText
+         const idCard= cardElement[0].children[1].innerHTML
         // console.log(idCard)
-         
-         
-           
-      //    card.insertAdjacentHTML('beforeend', `<div>
-      //    <img class="img" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${idnum()}.png" alt="">
-      //    <h3>${p}</h3>
-      //    <P>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis, ad explicabo.</P>
-      //  </div>`)
-      //    console.log("ok");
-         
-       //   const card= document.querySelector("#card").insertAdjacentHTML('beforeend', `<div>
-       
-       //   //   <img class="img" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png" alt="">
-       // //   <h3>pokemon</h3>
-       // //   <P>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis, ad explicabo.</P>
-       // // </div>`)
+        const resp = await fetch(
+          `https://pokeapi.co/api/v2/pokemon/${idCard}`
+      );
+      const data = await resp.json();
+     const pokeresp=await fetch(data.species.url)
+     const pokeDesc = await pokeresp.json()
+     const types= data.types.map(typeInfo => typeInfo.type.name)
+    console.log(pokeDesc)      
+     img.setAttribute("src", `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${data.id}.png`)
+           pName.innerText =(`${data.name} Nº ${data.id }`) 
+           pType.innerText = (`${types.join(' | ')}`)
+          description.innerText= pokeDesc.flavor_text_entries[9].flavor_text
+
+        
         })
  
+      })
  
  
- 
-    });
+    
 }
 
 getAllPokemons();
  
-
- 
-  
-
-
-
-
-
-
