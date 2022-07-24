@@ -2,34 +2,42 @@
   padding: 0;
   box-sizing: border-box;}
 
-  .bg{
-  background-image: url(Pokedex_web.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: fixed;
+ header{
+  display: flex;
+  justify-content: space-between;
+max-width: 80%;
+margin-top: 1rem;
+margin-left: 2rem;
+background: rgb(20,14,125);
+background: linear-gradient(90deg, rgba(20,14,125,1) 0%, rgba(90,119,186,1) 53%, rgba(2,80,147,1) 100%);
+border-radius: 2rem;
+color: #dfe0ec;
+align-items: center;
+ }
+ header h2{
  
+  margin-left: 2rem;
+ }
  
-}
+ header .h2{
+ 
+  margin-right: 2rem;
+  text-align: center;
+ }
 
-.container {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  grid-template-rows: 0.9fr 0.1fr;
-  gap: 0px 26px;
-  grid-auto-flow: row;
-  grid-template-areas:
-    ". ."
-    ". .";
-}
+
 
 html,
-body,
-.container {
-  height: 100%;
-  margin: 0;
+body{
+height: 100%;
+margin: 0;
+overflow: hidden;
+background: rgb(4,1,66);
+background: linear-gradient(90deg, rgba(4,1,66,1) 8%, rgba(33,81,194,1) 51%, rgba(5,27,254,1) 82%);
 }
 
-/* For presentation only, no need to copy the code below */
+
+
 
 
 .container {
@@ -38,21 +46,18 @@ body,
   left: 0;
   width: 100%;
   height: 100%;
-  display: grid;
-  align-items: center;
-  justify-content: center;
+  display: flex;
+ justify-content: space-evenly;
 }
 
 .father {
-  display: inline;
-  align-items: left;
-  justify-content: left;
-  max-width: 60%;
-  max-height:70%;
-  margin-top: 9rem;
- margin-bottom: 2rem;
+ margin-right: 3rem;
+  max-width: 20%;
+  max-height:58%;
+  margin-top: 7rem;
+ margin-bottom: 4rem;
  overflow-y: scroll;
-float: left;
+
 }
  
   .father::-webkit-scrollbar {
@@ -70,14 +75,14 @@ float: left;
 .line {
   display: flex;
   flex-direction: row;
-  justify-self: start;
+  /* justify-self: start; */
   
   text-decoration: none;
   font-size: 20px;
   background-color: #fdeab1;
   border-radius: 2rem}
   .line h2{
-    margin-left: 2rem;
+    margin-left: 1rem;
     text-transform: capitalize;
    
   }
@@ -92,11 +97,11 @@ float: left;
 #card {
   display: flex;
   background-color: #E7F1F3;
- align-items: center;
- justify-content: center;
+ /* align-items: center;
+ justify-content: center; */
   border-radius: .5rem;
   max-width: 70%;
-  max-height: 80%;
+  max-height: 62%;
   margin:  0 auto;
 margin-top: 7rem;
 margin-bottom: 1rem;
@@ -106,13 +111,9 @@ overflow: hidden;
   
   max-width: 50%;
   margin-left:  7rem ;
-margin-right: 50%;} 
-.info{
-  background-color:#AACAEC ;
-  margin-left: 1rem;
-  margin-right: 1rem;
-  border-radius: 2rem;
-}
+/* margin-right: 50%; */
+} 
+
 
 .name{
   background-color:#AACAEC ;
@@ -138,3 +139,102 @@ margin-right: 50%;}
     text-align: justify;
     text-transform: capitalize;
     }
+   
+    @media (min-width: 249px) and (max-width: 480px) {
+      .container {
+        flex-direction: column;
+        
+        margin: 0 auto;
+      }
+      #card {
+        display: flex;
+        align-items: center;
+        background-color: #E7F1F3;
+       /* align-items: center;
+       justify-content: center; */
+        border-radius: .2rem;
+        max-width: 100%;
+        max-height: 92%;
+        margin:  0 auto;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      overflow-y: scroll;
+      
+      }
+      
+      
+      .name{
+        background-color:#AACAEC ;
+        
+        font-size: medium;
+        text-align: justify;
+       
+        text-transform: capitalize;
+      
+      }
+      .type { 
+        font-size: medium;
+        text-align: justify;
+        background-color:#AACAEC ;
+      
+        
+        
+        text-transform: capitalize}
+        
+        .description{ 
+          background-color:#AACAEC ;
+       font-size: medium;
+          text-align: justify;
+          text-transform: capitalize;
+          }
+
+
+      .img {
+  
+        max-width: 40%;
+        
+      /* margin-right: 50%; */
+      margin: 0 auto;
+      } 
+
+      .father {
+        margin-right:0;
+         max-width: 100%;
+         max-height:38%;
+         margin-top: 1rem;
+        margin-bottom: 4rem;
+        overflow-y: scroll;
+       
+       }
+       .line img {
+        max-width: 10%;
+        max-height: 7%;
+      }
+    
+      
+    }
+
+    @media (min-width: 481px)  and (max-width: 900px) {
+      .father {
+        margin-right:1rem;
+         max-width: 33%;
+         max-height:58%;
+         margin-top: 4rem;
+        margin-bottom: 4rem;
+        overflow-y: scroll;}
+
+        #card {
+          display: flex;
+          align-items: center;
+          background-color: #E7F1F3;
+       
+          border-radius: .2rem;
+          max-width: 50%;
+          max-height: 29%;
+          margin:  0 auto;
+        margin-top: 4rem;
+        margin-bottom: 1rem;
+        overflow-y: scroll;}
+
+    }
+    
